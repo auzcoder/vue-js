@@ -13,7 +13,7 @@
         <MovieList :movies="movies" />
       </div>
 
-      <MovieAddForm />
+      <MovieAddForm  @createMovie="createMovie" />
     </div>
 
   </div>
@@ -69,6 +69,11 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    createMovie(item) {
+      console.log(item)
+    },
   },
 }
 
