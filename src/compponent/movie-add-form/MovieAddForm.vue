@@ -21,12 +21,15 @@ export default {
     },
   },
 }
+
+
+
 </script>
 
 <template>
   <div class="movie-add-form" @submit.prevent>
     <h3>Kino qo'shish</h3>
-    <form class="add-form d-flex">
+    <form class="add-form d-flex needs-validation" novalidate>
       <input type="text"
          class="form-control"
          placeholder="Kino nomi?"
