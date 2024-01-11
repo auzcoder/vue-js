@@ -13,11 +13,12 @@ export default {
   <div class="movie-add-form">
     <h3>Kino qo'shish</h3>
     <form class="add-form d-flex">
-      <input type="text" class="form-control" placeholder="Kino nomi?" :value="name" />
+      <input type="text" class="form-control" placeholder="Kino nomi?" :value="name" @input="name = $event.target.value" />
       <input type="number"
       class="form-control new-movie-label"
       placeholder="Necha marta ko'rilgan?"
       :value="viewers"
+       @input="viewers = $event.target.value"
       />
       <button class="btn btn-outline-success" type="submit">Qo'shish</button>
     </form>
