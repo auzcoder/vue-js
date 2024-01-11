@@ -23,5 +23,12 @@
 </template>
 
 <style scoped>
+.list-group-item {
+  padding: 15px 20px;
+  border-bottom: 1px solid #3d5a80;
+}
+.list-group-item:last-child {
+  border-bottom: none;
+}
 
 </style>
