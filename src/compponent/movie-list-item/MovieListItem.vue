@@ -37,4 +37,12 @@ import SearchPanel from "@/compponent/app/App.vue";
   cursor: pointer;
   width: 550px;
 }
+
+.list-group-item input {
+  line-height: 35px;
+  font-size: 20px;
+  text-align: center;
+  border: 0;
+  outline: none;
+}
 </style>
