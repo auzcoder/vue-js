@@ -7,6 +7,8 @@ import MovieListItem from "@/compponent/movie-list-item/MovieListItem.vue";
   <div class="movie-list">
     <ul class="list-group">
       <MovieListItem />
+      <MovieListItem />
+      <MovieListItem />
     </ul>
   </div>
 

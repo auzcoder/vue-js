@@ -1,5 +1,6 @@
 <script setup>
 
+import SearchPanel from "@/compponent/app/App.vue";
 </script>
 
 <template>
@@ -30,5 +31,10 @@
 .list-group-item:last-child {
   border-bottom: none;
 }
-
+.list-group-item span {
+  line-height: 35px;
+  font-size: 20px;
+  cursor: pointer;
+  width: 550px;
+}
 </style>
