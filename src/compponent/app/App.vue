@@ -38,30 +38,35 @@ export default {
     return {
       movies: [
         {
+          id: 1,
           name: 'Sayrga chiqgan go\'dak',
           viewers: 940,
           favourite: false,
           like: false,
         },
         {
+          id: 2,
           name: 'Poyitaxt - Sulton Abdulhamidxon',
           viewers: 600,
           favourite: true,
           like: true,
         },
         {
+          id: 3,
           name: 'Transformerlar - 2',
           viewers: 1501,
           favourite: false,
           like: false,
         },
         {
+          id: 4,
           name: 'Uyda yog\'iz - 4',
           viewers: 420,
           favourite: false,
           like: false
         },
         {
+          id: 5,
           name: 'Ichkarida - Turk seriali',
           viewers: 420,
           favourite: true,
