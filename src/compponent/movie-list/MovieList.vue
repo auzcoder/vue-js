@@ -1,12 +1,11 @@
 <script setup>
 
+import MovieListItem from "@/compponent/movie-list-item/MovieListItem.vue";
 </script>
 
 <template>
   <ul class="movie-list list-group">
-    <li>Sayrga chiqgan go'dak</li>
-    <li>Poyitaxt - Sulton Abdulhamidxon</li>
-    <li>Transformerlar - 2</li>
+    <MovieListItem />
   </ul>
 </template>
 
