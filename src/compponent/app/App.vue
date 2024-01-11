@@ -10,7 +10,7 @@
         <AppFilter />
       </div>
       <div class="movie--list">
-        <MovieList :movies="movies" />
+        <MovieList :movies="movies" @onLike="onLikeHandler"/>
       </div>
 
       <MovieAddForm  @createMovie="createMovie" />
@@ -78,6 +78,14 @@ export default {
   methods: {
     createMovie(item) {
       this.movies.push(item)
+    },
+    onLikeHandler(id) {
+      const arry = this.movies.map(item => {
+        if (item.id === id) {
+          console.log(item)
+        }
+      })
+      // console.log(arry)
     },
   },
 }
