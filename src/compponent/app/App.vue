@@ -6,8 +6,9 @@
         <SearchPanel />
         <AppFilter />
       </div>
-      <MovieAddForm />
+
       <MovieList />
+      <MovieAddForm />
     </div>
 
   </div>

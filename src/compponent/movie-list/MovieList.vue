@@ -4,9 +4,12 @@ import MovieListItem from "@/compponent/movie-list-item/MovieListItem.vue";
 </script>
 
 <template>
-  <ul class="movie-list list-group">
-    <MovieListItem />
-  </ul>
+  <div class="movie-list">
+    <ul class="list-group">
+      <MovieListItem />
+    </ul>
+  </div>
+
 </template>
 
 <style scoped>
