@@ -15,7 +15,12 @@ export default {
   <div class="movie-list">
     <ul class="list-group">
 <!--      <li v-for="movie in movies">{{ movie.name }}</li>-->
-      <MovieListItem v-for="movie in movies" v-bind:movie="movie" :key="movie.id" />
+      <MovieListItem
+          v-for="movie in movies"
+          v-bind:movie="movie"
+          :key="movie.id"
+          @click="$emit('onLike', this.movie.id)"
+      />
     </ul>
   </div>
 
