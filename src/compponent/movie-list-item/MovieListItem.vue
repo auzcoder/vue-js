@@ -1,6 +1,5 @@
 <script>
 
-import SearchPanel from "@/compponent/app/App.vue";
 export default {
   props: {
     movie: {
@@ -13,9 +12,9 @@ export default {
 </script>
 
 <template>
-  <li class="list-group-item d-flex justify-content-between">
+  <li class="list-group-item d-flex justify-content-between" :class="[{like: movie.like}, {favourite: movie.favourite}]">
     <span class="list-group-item-label">{{ movie.name }}</span>
-    <input type="number" class="list-group-item-input" v-bind:value="movie.viewers" />
+    <input type="number" class="list-group-item-input" :value="movie.viewers" />
     <div class="d-flex justify-content-center align-items-center">
       <button class="btn-cookie btn-sm" type="button">
         <i class="fas fa-cookie"></i>
