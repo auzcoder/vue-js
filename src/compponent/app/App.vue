@@ -80,12 +80,13 @@ export default {
       this.movies.push(item)
     },
     onLikeHandler(id) {
-      const arry = this.movies.map(item => {
+      this.movies.map(item => {
         if (item.id === id) {
+          item.like = !item.like
           console.log(item)
         }
+        return item
       })
-      // console.log(arry)
     },
   },
 }
