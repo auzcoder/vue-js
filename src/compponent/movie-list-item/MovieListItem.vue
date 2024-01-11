@@ -7,13 +7,18 @@ export default {
       required: true,
     },
   },
+  methods: {
+    onLike() {
+      this.$emit("onLike", this.movie.id)
+    },
+  },
 }
 
 </script>
 
 <template>
   <li class="list-group-item d-flex justify-content-between" :class="[{like: movie.like}, {favourite: movie.favourite}]">
-    <span class="list-group-item-label">{{ movie.name }}</span>
+    <span @click="onLike" class="list-group-item-label">{{ movie.name }}</span>
     <input type="number" class="list-group-item-input" :value="movie.viewers" />
     <div class="d-flex justify-content-center align-items-center">
       <button class="btn-cookie btn-sm" type="button">

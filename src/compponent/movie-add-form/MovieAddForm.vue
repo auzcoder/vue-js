@@ -15,7 +15,7 @@ export default {
         favourite: false,
         like: false,
       }
-      this.$emit('createMovie', newMovie),
+      this.$emit('createMovie', newMovie)
       this.name = ''
       this.viewers = ''
     },

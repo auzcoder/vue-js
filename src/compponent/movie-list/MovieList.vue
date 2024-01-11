@@ -6,8 +6,8 @@ export default {
     movies: {
       type: Array,
       required: true,
-    }
-  }
+    },
+  },
 }
 </script>
 
