@@ -14,7 +14,7 @@ export default {
         favourite: false,
         like: false,
       }
-      console.log(newMovie)
+      this.$emit('createMovie', newMovie)
     },
   },
 }
