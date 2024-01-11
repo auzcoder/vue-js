@@ -6,6 +6,17 @@ export default {
       viewers: '',
     }
   },
+  methods: {
+    addMovie() {
+      const newMovie = {
+        name: this.name,
+        viewers: this.viewers,
+        favourite: false,
+        like: false,
+      }
+      console.log(newMovie)
+    },
+  },
 }
 </script>
 
@@ -20,7 +31,7 @@ export default {
       :value="viewers"
        @input="viewers = $event.target.value"
       />
-      <button class="btn btn-outline-success" type="submit">Qo'shish</button>
+      <button class="btn btn-outline-success" type="submit" @click="addMovie">Qo'shish</button>
     </form>
   </div>
 </template>
