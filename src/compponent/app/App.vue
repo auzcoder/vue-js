@@ -72,7 +72,7 @@ export default {
   },
   methods: {
     createMovie(item) {
-      console.log(item)
+      this.movies.push(item)
     },
   },
 }
