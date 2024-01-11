@@ -1,9 +1,7 @@
-<script setup>
+<script>
 import MovieListItem from "@/compponent/movie-list-item/MovieListItem.vue";
 export default {
-  components: {
-    MovieListItem
-  },
+  components: {MovieListItem},
   data() {
     return {
       movies: [
@@ -22,19 +20,18 @@ export default {
         {
           name: 'Uyda yog\'iz - 4',
           viewers: 420,
-        }
-      ]
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 
 <template>
   <div class="movie-list">
     <ul class="list-group">
-      <MovieListItem />
-      <MovieListItem />
-      <MovieListItem />
+<!--      <li v-for="movie in movies">{{ movie.name }}</li>-->
+      <MovieListItem v-for="movie in movies" v-bind:movie="movie"/>
     </ul>
   </div>
 
