@@ -1,5 +1,6 @@
 <template>
-  <div class="container">
+  <div class="mt-5">
+    <div class="container">
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Email address</label>
         <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
@@ -9,7 +10,8 @@
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
       </div>
     </div>
-
-    <i class="fa-solid fa-house"></i>
+  </div>
 
 </template>
+<script setup>
+</script>
