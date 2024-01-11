@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-  <div class="movie-add-form">
+  <div class="movie-add-form" @submit.prevent>
     <h3>Kino qo'shish</h3>
     <form class="add-form d-flex">
       <input type="text" class="form-control" placeholder="Kino nomi?" :value="name" @input="name = $event.target.value" />
