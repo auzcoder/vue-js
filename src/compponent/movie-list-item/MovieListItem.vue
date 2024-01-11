@@ -45,4 +45,32 @@ import SearchPanel from "@/compponent/app/App.vue";
   border: 0;
   outline: none;
 }
+.list-group-item button {
+  width: 35px;
+  height: 35px;
+  margin: 3px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.list-group-item .btn-cookie {
+  color: #e09f3e;
+}
+
+.list-group-item .btn-trash {
+  color: #e5383b;
+}
+
+.list-group-item .fa-star {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  font-size: 16px;
+  color: #ffd700;
+  transition: 0.3s all;
+  transform: translate(30px);
+  opacity: 0;
+}
 </style>
