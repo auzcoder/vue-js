@@ -5,7 +5,7 @@ import SearchPanel from "@/compponent/app/App.vue";
 
 <template>
   <li class="list-group-item d-flex justify-content-between">
-    <span class="list-group-item-label favourite">Poyitaxt - Sulton Abdulhamidxon</span>
+    <span class="list-group-item-label">Poyitaxt - Sulton Abdulhamidxon</span>
     <input type="number" class="list-group-item-input" defaultValue="555" />
     <div class="d-flex justify-content-center align-items-center">
       <button class="btn-cookie btn-sm" type="button">
@@ -15,7 +15,7 @@ import SearchPanel from "@/compponent/app/App.vue";
       <button class="btn-trash btn-sm" type="button">
         <i class="fas fa-trash"></i>
       </button>
-      <i class="fas fa-star like"></i>
+      <i class="fas fa-star"></i>
     </div>
   </li>
 <!--  <li>Sayrga chiqgan go'dak</li>-->
