@@ -1,6 +1,32 @@
 <script setup>
-
 import MovieListItem from "@/compponent/movie-list-item/MovieListItem.vue";
+export default {
+  components: {
+    MovieListItem
+  },
+  data() {
+    return {
+      movies: [
+        {
+          name: 'Sayrga chiqgan go\'dak',
+          viewers: 940,
+        },
+        {
+          name: 'Poyitaxt - Sulton Abdulhamidxon',
+          viewers: 600,
+        },
+        {
+          name: 'Transformerlar - 2',
+          viewers: 1501,
+        },
+        {
+          name: 'Uyda yog\'iz - 4',
+          viewers: 420,
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <template>

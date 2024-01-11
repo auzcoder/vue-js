@@ -26,6 +26,7 @@ import SearchPanel from "@/compponent/app/App.vue";
 <style scoped>
 .list-group-item {
   padding: 15px 20px;
+  border: 0;
   border-bottom: 1px solid #3d5a80;
 }
 .list-group-item:last-child {
