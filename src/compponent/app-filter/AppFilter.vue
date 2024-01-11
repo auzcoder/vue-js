@@ -4,13 +4,13 @@
 
 <template>
   <div class="btn-group">
-    <button class="btn btn-outline-dark" type="button">
+    <button class="btn btn-outline-primary" type="button">
       Barcha kinolar
     </button>
-    <button class="btn btn-outline-dark" type="button">
+    <button class="btn btn-outline-primary" type="button">
       Mashhur kinolar
     </button>
-    <button class="btn btn-outline-dark" type="button">
+    <button class="btn btn-outline-primary" type="button">
       Eng ko'p ko'rilgan kinolar
     </button>
   </div>
