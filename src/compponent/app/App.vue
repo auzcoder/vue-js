@@ -1,13 +1,16 @@
 <template>
   <div class="app font-monospace">
     <div class="content">
-      <AppInfo />
+      <AppInfo
+          :allMoviesCount="movies.length"
+          :favouriteMovieCount="movies.filter(c =>c.favourite).length"
+      />
       <div class="search-panel">
         <SearchPanel />
         <AppFilter />
       </div>
-      <div class="">
-        <MovieList />
+      <div class="movie--list">
+        <MovieList :movies="movies" />
       </div>
 
       <MovieAddForm />
@@ -31,6 +34,42 @@ export default {
     MovieList,
     MovieAddForm,
   },
+  data() {
+    return {
+      movies: [
+        {
+          name: 'Sayrga chiqgan go\'dak',
+          viewers: 940,
+          favourite: false,
+          like: false,
+        },
+        {
+          name: 'Poyitaxt - Sulton Abdulhamidxon',
+          viewers: 600,
+          favourite: true,
+          like: true,
+        },
+        {
+          name: 'Transformerlar - 2',
+          viewers: 1501,
+          favourite: false,
+          like: false,
+        },
+        {
+          name: 'Uyda yog\'iz - 4',
+          viewers: 420,
+          favourite: false,
+          like: false
+        },
+        {
+          name: 'Ichkarida - Turk seriali',
+          viewers: 420,
+          favourite: true,
+          like: true
+        },
+      ],
+    }
+  },
 }
 
 
@@ -50,6 +89,14 @@ export default {
 }
 
 .search-panel {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #fcfaf5;
+  border-radius: 4px;
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.15);
+}
+
+.movie-list {
   margin-top: 2rem;
   padding: 1.5rem;
   background-color: #fcfaf5;

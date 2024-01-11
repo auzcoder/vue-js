@@ -2,42 +2,12 @@
 import MovieListItem from "@/compponent/movie-list-item/MovieListItem.vue";
 export default {
   components: {MovieListItem},
-  data() {
-    return {
-      movies: [
-        {
-          name: 'Sayrga chiqgan go\'dak',
-          viewers: 940,
-          favourite: false,
-          like: false,
-        },
-        {
-          name: 'Poyitaxt - Sulton Abdulhamidxon',
-          viewers: 600,
-          favourite: true,
-          like: true,
-        },
-        {
-          name: 'Transformerlar - 2',
-          viewers: 1501,
-          favourite: false,
-          like: false,
-        },
-        {
-          name: 'Uyda yog\'iz - 4',
-          viewers: 420,
-          favourite: false,
-          like: false
-        },
-        {
-          name: 'Ichkarida - Turk seriali',
-          viewers: 420,
-          favourite: true,
-          like: true
-        },
-      ],
+  props: {
+    movies: {
+      type: Array,
+      required: true,
     }
-  },
+  }
 }
 </script>
 
