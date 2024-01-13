@@ -26,6 +26,7 @@ export default {
 </template>
 
 <style scoped>
+
 .movie-list {
   margin-bottom: 2rem;
   padding: 1.5rem;
@@ -33,4 +34,5 @@ export default {
   border-radius: 4px;
   box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.15);
 }
+
 </style>
