@@ -7,7 +7,7 @@
       />
       <div class="search-panel">
         <SearchPanel :updateTermHandler="updateTermHandler"/>
-        <AppFilter />
+        <AppFilter :updateFilterHandler="updateFilterHandler"/>
       </div>
       <div class="movie--list">
         <MovieList
@@ -117,6 +117,10 @@ export default {
     updateTermHandler(term) {
       this.term = term
     },
+
+    updateFilterHandler(filter) {
+      this.filter = filter
+    }
   },
 }
 
