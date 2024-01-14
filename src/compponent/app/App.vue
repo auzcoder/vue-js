@@ -82,8 +82,10 @@ export default {
     onToggleHandler(id, prop) {
       this.movies.map(item => {
         if (item.id === id) {
-          item.prop = !item.prop
           console.log(item)
+          return {...item, [prop]: !item[prop]}
+          // item.prop = !item.prop
+          // console.log(item)
         }
         return item
       })

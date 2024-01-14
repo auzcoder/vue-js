@@ -7,11 +7,11 @@ export default {
       required: true,
     },
   },
-  methods: {
-    onLike() {
-      this.$emit("onLike", this.movie.id)
-    },
-  },
+  // methods: {
+  //   onToggle() {
+  //     this.$emit("onToggle", this.movie.id)
+  //   },
+  // },
 }
 
 </script>
@@ -20,10 +20,10 @@ export default {
   <li class="list-group-item d-flex justify-content-between"
       :class="[{like: movie.like}, {favourite: movie.favourite}]"
   >
-    <span @click="$emit('onToggle', {id: movie.id, prop:'like'})" class="list-group-item-label">{{ movie.name }}</span>
+    <span @click="$emit('onToggle', {id: movie.id, prop: 'like'})" class="list-group-item-label">{{ movie.name }}</span>
     <input type="number" class="list-group-item-input" :value="movie.viewers" />
     <div class="d-flex justify-content-center align-items-center">
-      <button class="btn-cookie btn-sm" type="button" @click="$emit('onToggle', {id: movie.id, prop:'favourite'})">
+      <button class="btn-cookie btn-sm" type="button" @click="$emit('onToggle', {id: movie.id, prop: 'favourite'})">
         <i class="fas fa-cookie"></i>
       </button>
 
