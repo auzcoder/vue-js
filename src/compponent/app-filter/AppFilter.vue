@@ -50,30 +50,6 @@ export default {
     >
       {{ btn.title }}
     </button>
-<!--    <button-->
-<!--        class="btn"-->
-<!--        type="button"-->
-<!--        @click="filterHandler('all')"-->
-<!--        :class="[filterName === 'all' ? 'btn-primary' : 'btn-outline-primary']"-->
-<!--    >-->
-<!--      Barcha kinolar-->
-<!--    </button>-->
-<!--    <button-->
-<!--        class="btn"-->
-<!--        type="button"-->
-<!--        @click="filterHandler('popular')"-->
-<!--        :class="[filterName === 'popular' ? 'btn-primary' : 'btn-outline-primary']"-->
-<!--    >-->
-<!--      Mashhur kinolar-->
-<!--    </button>-->
-<!--    <button-->
-<!--        class="btn"-->
-<!--        type="button"-->
-<!--        @click="filterHandler('mostViewers')"-->
-<!--        :class="[filterName === 'mostViewers' ? 'btn-primary' : 'btn-outline-primary']"-->
-<!--    >-->
-<!--      Eng ko'p ko'rilgan kinolar-->
-<!--    </button>-->
   </div>
 </template>
 
