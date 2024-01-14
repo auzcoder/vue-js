@@ -79,8 +79,9 @@ export default {
     createMovie(item) {
       this.movies.push(item)
     },
-    onToggleHandler(id, prop) {
-      this.movies.map(item => {
+    onToggleHandler({id, prop}) {
+      console.log(prop)
+      this.movies = this.movies.map(item => {
         if (item.id === id) {
           console.log(item)
           return {...item, [prop]: !item[prop]}

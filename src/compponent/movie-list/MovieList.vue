@@ -16,7 +16,7 @@ export default {
     <ul class="list-group">
       <MovieListItem
           v-for="movie in movies"
-          v-bind:movie="movie"
+          :movie="movie"
           :key="movie.id"
           @onToggle="$emit('onToggle', $event)"
       />
