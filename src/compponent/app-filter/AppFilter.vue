@@ -1,7 +1,13 @@
 <script>
 export default {
-  updateFilterHandler: {
-    type: Function,
+  props: {
+    updateFilterHandler: {
+      type: Function,
+      required: true,
+    },
+  },
+  filterName: {
+    type: String,
     required: true,
   },
   data() {

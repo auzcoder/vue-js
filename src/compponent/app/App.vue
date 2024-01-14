@@ -7,7 +7,7 @@
       />
       <div class="search-panel">
         <SearchPanel :updateTermHandler="updateTermHandler"/>
-        <AppFilter :updateFilterHandler="updateFilterHandler"/>
+        <AppFilter :updateFilterHandler="updateFilterHandler" :filterName="filter" />
       </div>
       <div class="movie--list">
         <MovieList
