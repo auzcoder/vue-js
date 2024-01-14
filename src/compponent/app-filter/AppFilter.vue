@@ -5,11 +5,12 @@ export default {
       type: Function,
       required: true,
     },
+    filterName: {
+      type: String,
+      required: true,
+    },
   },
-  filterName: {
-    type: String,
-    required: true,
-  },
+
   data() {
     return {
       filterButtons: [
@@ -33,37 +34,46 @@ export default {
     filterHandler(filter) {
       this.filter = filter
       this.updateFilterHandler(this.filter)
-    }
-  }
+    },
+  },
 }
 </script>
 
 <template>
   <div class="btn-group">
     <button
+        v-for="btn in filterButtons"
+        :key="btn.name"
         class="btn"
-        type="button"
-        @click="filterHandler('all')"
-        :class="[filterName === 'all' ? 'btn-primary' : 'btn-outline-primary']"
+        :class="[filterName === btn.name ? 'btn-primary' : 'btn-outline-primary' ]"
+        @click="filterHandler(btn.name)"
     >
-      Barcha kinolar
+      {{ btn.title }}
     </button>
-    <button
-        class="btn"
-        type="button"
-        @click="filterHandler('popular')"
-        :class="[filterName === 'popular' ? 'btn-primary' : 'btn-outline-primary']"
-    >
-      Mashhur kinolar
-    </button>
-    <button
-        class="btn"
-        type="button"
-        @click="filterHandler('mostViewers')"
-        :class="[filterName === 'mostViewers' ? 'btn-primary' : 'btn-outline-primary']"
-    >
-      Eng ko'p ko'rilgan kinolar
-    </button>
+<!--    <button-->
+<!--        class="btn"-->
+<!--        type="button"-->
+<!--        @click="filterHandler('all')"-->
+<!--        :class="[filterName === 'all' ? 'btn-primary' : 'btn-outline-primary']"-->
+<!--    >-->
+<!--      Barcha kinolar-->
+<!--    </button>-->
+<!--    <button-->
+<!--        class="btn"-->
+<!--        type="button"-->
+<!--        @click="filterHandler('popular')"-->
+<!--        :class="[filterName === 'popular' ? 'btn-primary' : 'btn-outline-primary']"-->
+<!--    >-->
+<!--      Mashhur kinolar-->
+<!--    </button>-->
+<!--    <button-->
+<!--        class="btn"-->
+<!--        type="button"-->
+<!--        @click="filterHandler('mostViewers')"-->
+<!--        :class="[filterName === 'mostViewers' ? 'btn-primary' : 'btn-outline-primary']"-->
+<!--    >-->
+<!--      Eng ko'p ko'rilgan kinolar-->
+<!--    </button>-->
   </div>
 </template>
 
