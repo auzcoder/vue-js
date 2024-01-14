@@ -10,7 +10,7 @@
         <AppFilter />
       </div>
       <div class="movie--list">
-        <MovieList :movies="movies" @onLike="onLikeHandler"/>
+        <MovieList :movies="movies" @onLike="onLikeHandler"@onFavourite="onFavouriteHandler" />
       </div>
 
       <MovieAddForm  @createMovie="createMovie" />
@@ -87,6 +87,9 @@ export default {
         }
         return item
       })
+    },
+    onFavourite(id) {
+
     },
   },
 }
