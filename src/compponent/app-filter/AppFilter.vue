@@ -12,6 +12,20 @@ export default {
   },
   data() {
     return {
+      filterButtons: [
+        {
+          title: 'Barcha kinolar',
+          name: 'all'
+        },
+        {
+          title: 'Mashhur kinolar',
+          name: 'popular'
+        },
+        {
+          title: 'Eng ko\'p ko\'rilgan kinolar',
+          name: 'mostViewers'
+        },
+      ],
       filter: 'all',
     }
   },
@@ -27,17 +41,27 @@ export default {
 <template>
   <div class="btn-group">
     <button
-        class="btn btn-outline-primary"
+        class="btn"
         type="button"
         @click="filterHandler('all')"
-        :class="[filterName === filter ? 'btn-primary': 'btn-outline-primary']"
+        :class="[filterName === 'all' ? 'btn-primary' : 'btn-outline-primary']"
     >
       Barcha kinolar
     </button>
-    <button class="btn btn-outline-primary" type="button" @click="filterHandler('popular')">
+    <button
+        class="btn"
+        type="button"
+        @click="filterHandler('popular')"
+        :class="[filterName === 'popular' ? 'btn-primary' : 'btn-outline-primary']"
+    >
       Mashhur kinolar
     </button>
-    <button class="btn btn-outline-primary" type="button" @click="filterHandler('mostViewers')">
+    <button
+        class="btn"
+        type="button"
+        @click="filterHandler('mostViewers')"
+        :class="[filterName === 'mostViewers' ? 'btn-primary' : 'btn-outline-primary']"
+    >
       Eng ko'p ko'rilgan kinolar
     </button>
   </div>
