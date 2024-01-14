@@ -10,7 +10,7 @@
         <AppFilter />
       </div>
       <div class="movie--list">
-        <MovieList :movies="movies" @onToggle="onToggleHandler"/>
+        <MovieList :movies="movies" @onToggle="onToggleHandler" @onRemove="onRemoveHandler"/>
       </div>
 
       <MovieAddForm  @createMovie="createMovie" />
@@ -80,17 +80,17 @@ export default {
       this.movies.push(item)
     },
     onToggleHandler({id, prop}) {
-      console.log(prop)
       this.movies = this.movies.map(item => {
         if (item.id === id) {
           console.log(item)
           return {...item, [prop]: !item[prop]}
-          // item.prop = !item.prop
-          // console.log(item)
         }
         return item
       })
     },
+    onRemoveHandler(id) {
+      this.movies = this.movies.filter(c => c.id !== id)
+    }
   },
 }
 

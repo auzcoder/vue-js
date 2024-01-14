@@ -19,7 +19,7 @@ export default {
           :movie="movie"
           :key="movie.id"
           @onToggle="$emit('onToggle', $event)"
-          @onRemove="$emit('onRemove', $event)"
+          @onRemove="$emit('onRemove', movie.id)"
       />
     </ul>
   </div>
