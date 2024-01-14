@@ -1,5 +1,15 @@
-<script setup>
-
+<script>
+export default {
+  updateFilterHendler: {
+    type: Function,
+    required: true,
+  },
+  data() {
+    return {
+      filter: 'all',
+    }
+  },
+}
 </script>
 
 <template>
