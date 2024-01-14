@@ -88,8 +88,13 @@ export default {
         return item
       })
     },
-    onFavourite(id) {
-
+    onFavouriteHandler(id) {
+      this.movies.map(item => {
+        if (item.id === id) {
+          item.favourite === !item.favourite
+        }
+        return item
+      })
     },
   },
 }
