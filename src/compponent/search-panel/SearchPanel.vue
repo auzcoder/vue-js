@@ -13,7 +13,8 @@ export default {
   },
   methods: {
     changeHandler(e) {
-      this.term = e.term.value
+      this.term = e.target.value
+      this.updateTermHandler(this.term)
     },
   }
 }
