@@ -6,7 +6,7 @@
           :favouriteMovieCount="movies.filter(c =>c.favourite).length"
       />
       <div class="search-panel">
-        <SearchPanel />
+        <SearchPanel :updateTermHandler="updateTermHandler"/>
         <AppFilter />
       </div>
       <div class="movie--list">
