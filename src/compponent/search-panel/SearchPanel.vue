@@ -1,5 +1,12 @@
 <script setup>
-
+export default {
+  props: {
+    updateTermHandler: {
+      type: Function,
+      required: true,
+    },
+  },
+}
 </script>
 
 <template>

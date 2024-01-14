@@ -101,7 +101,10 @@ export default {
         return arr
       }
       return arr.filter(c => c.name.toLowerCase().indexOf(term) > -1)
-    }
+    },
+    updateTermHandler(term) {
+      this.term = term
+    },
   },
 }
 
