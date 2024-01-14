@@ -79,15 +79,14 @@ export default {
     createMovie(item) {
       this.movies.push(item)
     },
-    onToggleHandler(prop) {
-      console.log(prop)
-      // this.movies.map(item => {
-      //   if (item.id === id) {
-      //     item.like = !item.like
-      //     console.log(item)
-      //   }
-      //   return item
-      // })
+    onToggleHandler(id, prop) {
+      this.movies.map(item => {
+        if (item.id === id) {
+          item.prop = !item.prop
+          console.log(item)
+        }
+        return item
+      })
     },
   },
 }
