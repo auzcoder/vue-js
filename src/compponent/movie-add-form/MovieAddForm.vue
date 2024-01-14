@@ -8,6 +8,7 @@ export default {
   },
   methods: {
     addMovie() {
+      if (!this.name || !this.viewers) return
       const newMovie = {
         id: Date.now(),
         name: this.name,
