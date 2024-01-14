@@ -27,7 +27,7 @@ export default {
         <i class="fas fa-cookie"></i>
       </button>
 
-      <button class="btn-trash btn-sm" type="button">
+      <button class="btn-trash btn-sm" type="button" @click="$emit('onRemove', movie.id)" >
         <i class="fas fa-trash"></i>
       </button>
       <i class="fas fa-star"></i>
