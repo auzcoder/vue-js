@@ -10,7 +10,7 @@
         <AppFilter />
       </div>
       <div class="movie--list">
-        <MovieList :movies="movies" @onLike="onLikeHandler"@onFavourite="onFavouriteHandler" />
+        <MovieList :movies="movies" @onToggle="onToggleHandler"/>
       </div>
 
       <MovieAddForm  @createMovie="createMovie" />
@@ -79,22 +79,15 @@ export default {
     createMovie(item) {
       this.movies.push(item)
     },
-    onLikeHandler(id) {
-      this.movies.map(item => {
-        if (item.id === id) {
-          item.like = !item.like
-          console.log(item)
-        }
-        return item
-      })
-    },
-    onFavouriteHandler(id) {
-      this.movies.map(item => {
-        if (item.id === id) {
-          item.favourite === !item.favourite
-        }
-        return item
-      })
+    onToggleHandler(prop) {
+      console.log(prop)
+      // this.movies.map(item => {
+      //   if (item.id === id) {
+      //     item.like = !item.like
+      //     console.log(item)
+      //   }
+      //   return item
+      // })
     },
   },
 }
@@ -123,11 +116,11 @@ export default {
   box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.15);
 }
 
-.movie-list {
+/*.movie-list {
   margin-top: 2rem;
   padding: 1.5rem;
   background-color: #fcfaf5;
   border-radius: 4px;
   box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.15);
-}
+}*/
 </style>

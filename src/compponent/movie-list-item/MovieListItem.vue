@@ -17,11 +17,13 @@ export default {
 </script>
 
 <template>
-  <li class="list-group-item d-flex justify-content-between" :class="[{like: movie.like}, {favourite: movie.favourite}]">
-    <span @click="onLike" class="list-group-item-label">{{ movie.name }}</span>
+  <li class="list-group-item d-flex justify-content-between"
+      :class="[{like: movie.like}, {favourite: movie.favourite}]"
+  >
+    <span @click="$emit('onToggle', {id: movie.id, prop:'like'})" class="list-group-item-label">{{ movie.name }}</span>
     <input type="number" class="list-group-item-input" :value="movie.viewers" />
     <div class="d-flex justify-content-center align-items-center">
-      <button class="btn-cookie btn-sm" type="button" @click="$emit('onFavourite', movie.id)">
+      <button class="btn-cookie btn-sm" type="button" @click="$emit('onToggle', {id: movie.id, prop:'favourite'})">
         <i class="fas fa-cookie"></i>
       </button>
 

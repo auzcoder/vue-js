@@ -18,8 +18,7 @@ export default {
           v-for="movie in movies"
           v-bind:movie="movie"
           :key="movie.id"
-          @onLike="$emit('onLike', movie.id)"
-          @onFavourite="$emit('onFavourite', movie.id)"
+          @onToggle="$emit('onToggle', $event)"
       />
     </ul>
   </div>
