@@ -10,7 +10,11 @@
         <AppFilter />
       </div>
       <div class="movie--list">
-        <MovieList :movies="movies" @onToggle="onToggleHandler" @onRemove="onRemoveHandler"/>
+        <MovieList
+            :movies="onSearchHendler(movies, term)"
+            @onToggle="onToggleHandler"
+            @onRemove="onRemoveHandler"
+        />
       </div>
 
       <MovieAddForm  @createMovie="createMovie" />
@@ -96,6 +100,7 @@ export default {
       if(term.length === 0){
         return arr
       }
+      return arr.filter(c => c.name.toLowerCase().indexOf(term) > -1)
     }
   },
 }
