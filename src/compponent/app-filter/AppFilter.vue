@@ -26,7 +26,12 @@ export default {
 
 <template>
   <div class="btn-group">
-    <button class="btn btn-outline-primary" type="button" @click="filterHandler('all')">
+    <button
+        class="btn btn-outline-primary"
+        type="button"
+        @click="filterHandler('all')"
+        :class="[filterName === filter ? 'btn-primary': 'btn-outline-primary']"
+    >
       Barcha kinolar
     </button>
     <button class="btn btn-outline-primary" type="button" @click="filterHandler('popular')">
