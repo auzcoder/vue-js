@@ -1,4 +1,4 @@
-<script setup>
+<script>
 export default {
   props: {
     updateTermHandler: {
@@ -6,11 +6,27 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      term: '',
+    }
+  },
+  methods: {
+    changeHandler(e) {
+      this.term = e.term.value
+    },
+  }
 }
 </script>
 
 <template>
-  <input type="text" class="form-control search-panel" placeholder="Kinolarni qidirish..." />
+  <input
+      type="text"
+      class="form-control search-panel"
+      placeholder="Kinolarni qidirish..."
+      :value="term"
+      @input="changeHandler"
+  />
 </template>
 
 <style scoped>
