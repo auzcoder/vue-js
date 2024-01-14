@@ -73,6 +73,7 @@ export default {
           like: true
         },
       ],
+      term: '',
     }
   },
   methods: {
@@ -90,6 +91,11 @@ export default {
     },
     onRemoveHandler(id) {
       this.movies = this.movies.filter(c => c.id !== id)
+    },
+    onSearchHendler(arr, term) {
+      if(term.length === 0){
+        return arr
+      }
     }
   },
 }
