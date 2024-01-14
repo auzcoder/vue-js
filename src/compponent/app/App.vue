@@ -11,7 +11,7 @@
       </div>
       <div class="movie--list">
         <MovieList
-            :movies="onFilterHandler(onSearchHendler(movies, term), filter)"
+            :movies="onFilterHandler(onSearchHandler(movies, term), filter)"
             @onToggle="onToggleHandler"
             @onRemove="onRemoveHandler"
         />
@@ -97,7 +97,7 @@ export default {
     onRemoveHandler(id) {
       this.movies = this.movies.filter(c => c.id !== id)
     },
-    onSearchHendler(arr, term) {
+    onSearchHandler(arr, term) {
       if(term.length === 0){
         return arr
       }

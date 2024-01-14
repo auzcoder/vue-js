@@ -1,6 +1,6 @@
 <script>
 export default {
-  updateFilterHendler: {
+  updateFilterHandler: {
     type: Function,
     required: true,
   },
