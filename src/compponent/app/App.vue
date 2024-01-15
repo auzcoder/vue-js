@@ -120,7 +120,11 @@ export default {
 
     updateFilterHandler(filter) {
       this.filter = filter
-    }
+    },
+
+    async frtchMovie() {
+      parent
+    },
   },
 }
 
