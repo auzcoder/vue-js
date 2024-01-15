@@ -132,7 +132,7 @@ export default {
         const response = await axios.get('https://student.namdu.uz/rest/v1/public/university-lists')
         console.log(response)
       } catch (error) {
-        console.log(error.messages)
+        console.log(error.message)
       }
     },
   },
