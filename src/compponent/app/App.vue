@@ -12,8 +12,12 @@
       <div class="movie-list" v-if="!movies.length && !isLoading">
         <p class="text-center fs-3 text-danger">Kinolar mavjud emas!</p>
       </div>
-      <div class="movie-list" v-else-if="isLoading">
-        <p class="text-center fs-3 text-danger">Kinolar yuklanmoqda...</p>
+      <div class="movie-list d-flex justify-content-center" v-else-if="isLoading">
+<!--        <div class="spinner-grow text-primary" role="status">-->
+<!--          <span class="visually-hidden">Loading...</span>-->
+<!--        </div>-->
+<!--        <p class="text-center fs-3 text-danger">Kinolar yuklanmoqda...</p>-->
+        <Loader />
       </div>
         <MovieList
             v-else
@@ -34,9 +38,11 @@ import AppFilter from "@/compponent/app-filter/AppFilter.vue";
 import MovieList from "@/compponent/movie-list/MovieList.vue";
 import MovieAddForm from "@/compponent/movie-add-form/MovieAddForm.vue";
 import axios from "axios";
+import Loader from "@/ui/Loader.vue";
 
 export default {
   components: {
+    Loader,
     AppInfo,
     SearchPanel,
     AppFilter,
@@ -132,19 +138,19 @@ export default {
       // const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
       try {
         this.isLoading = true
-        setTimeout(async () =>{
-          const {data} = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
-          // const response = await axios.get('https://student.namdu.uz/rest/v11/public/university-list')
-          const newArr = data.map(item => ({
-            id: item.id,
-            name: item.title,
-            like: false,
-            favourite: false,
-            viewers: item.id * 150,
-          }))
-          this.movies = newArr
-          this.isLoading = false
-        }, 3000)
+        // setTimeout(async () =>{
+        const {data} = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
+        // const response = await axios.get('https://student.namdu.uz/rest/v11/public/university-list')
+        const newArr = data.map(item => ({
+          id: item.id,
+          name: item.title,
+          like: false,
+          favourite: false,
+          viewers: item.id * 150,
+        }))
+        this.movies = newArr
+        // this.isLoading = false
+        // }, 3000)
 
       } catch (error) {
         alert(error.message)
