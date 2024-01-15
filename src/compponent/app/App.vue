@@ -129,10 +129,10 @@ export default {
     async fetchMovie() {
       // const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
       try {
-        const response = await axios.get('https://student.tiiiiiiiu-edu.uz/rest/v1/public/university-list')
+        const response = await axios.get('https://student.namdu.uz/rest/v1/public/university-lists')
         console.log(response)
       } catch (error) {
-        console.log(error.message)
+        console.log(error.messages)
       }
     },
   },
