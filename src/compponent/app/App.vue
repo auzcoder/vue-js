@@ -1,8 +1,5 @@
 <template>
   <div class="app font-monospace">
-    <button class="btn btn-success" @click="fetchMovie">
-      bosish
-    </button>
     <div class="content">
       <AppInfo
           :allMoviesCount="movies.length"
@@ -138,12 +135,16 @@ export default {
           favourite: false,
           viewers: item.id * 150,
         }))
+        this.movies = newArr
         console.log(newArr)
       } catch (error) {
         alert(error.message)
       }
     },
   },
+  mounted() {
+    this.fetchMovie()
+  }
 }
 
 
