@@ -9,8 +9,11 @@
         <SearchPanel :updateTermHandler="updateTermHandler"/>
         <AppFilter :updateFilterHandler="updateFilterHandler" :filterName="filter" />
       </div>
-      <div class="movie-list" v-if="!movies.length">
+      <div class="movie-list" v-if="!movies.length && !isLoading">
         <p class="text-center fs-3 text-danger">Kinolar mavjud emas!</p>
+      </div>
+      <div class="movie-list" v-else-if="isLoading">
+        <p class="text-center fs-3 text-danger">Kinolar yuklanmoqda...</p>
       </div>
         <MovieList
             v-else
@@ -81,6 +84,7 @@ export default {
       ],
       term: '',
       filter: 'all',
+      isLoading: false,
     }
   },
   methods: {
@@ -127,19 +131,25 @@ export default {
     async fetchMovie() {
       // const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
       try {
-        const {data} = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
-        // const response = await axios.get('https://student.namdu.uz/rest/v11/public/university-list')
-        const newArr = data.map(item => ({
-          id: item.id,
-          name: item.title,
-          like: false,
-          favourite: false,
-          viewers: item.id * 150,
-        }))
-        this.movies = newArr
-        console.log(newArr)
+        this.isLoading = true
+        setTimeout(async () =>{
+          const {data} = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
+          // const response = await axios.get('https://student.namdu.uz/rest/v11/public/university-list')
+          const newArr = data.map(item => ({
+            id: item.id,
+            name: item.title,
+            like: false,
+            favourite: false,
+            viewers: item.id * 150,
+          }))
+          this.movies = newArr
+          this.isLoading = false
+        }, 3000)
+
       } catch (error) {
         alert(error.message)
+      } finally {
+        this.isLoading = false
       }
     },
   },
