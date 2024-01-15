@@ -9,14 +9,15 @@
         <SearchPanel :updateTermHandler="updateTermHandler"/>
         <AppFilter :updateFilterHandler="updateFilterHandler" :filterName="filter" />
       </div>
-      <div class="movie--list">
+      <div class="movie-list" v-if="!movies.length">
+        <p class="text-center fs-3 text-danger">Kinolar mavjud emas!</p>
+      </div>
         <MovieList
+            v-else
             :movies="onFilterHandler(onSearchHandler(movies, term), filter)"
             @onToggle="onToggleHandler"
             @onRemove="onRemoveHandler"
         />
-      </div>
-
       <MovieAddForm  @createMovie="createMovie" />
     </div>
 
@@ -171,11 +172,11 @@ export default {
   box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.15);
 }
 
-/*.movie-list {
+.movie-list {
   margin-top: 2rem;
   padding: 1.5rem;
   background-color: #fcfaf5;
   border-radius: 4px;
   box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.15);
-}*/
+}
 </style>
