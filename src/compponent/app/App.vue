@@ -129,10 +129,18 @@ export default {
     async fetchMovie() {
       // const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
       try {
-        const response = await axios.get('https://student.namdu.uz/rest/v1/public/university-lists')
-        console.log(response)
+        const {data} = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
+        // const response = await axios.get('https://student.namdu.uz/rest/v11/public/university-list')
+        const newArr = data.map(item => ({
+          id: item.id,
+          name: item.title,
+          like: false,
+          favourite: false,
+          viewers: item.id * 50,
+        }))
+        console.log(newArr)
       } catch (error) {
-        console.log(error.message)
+        alert(error.message)
       }
     },
   },
