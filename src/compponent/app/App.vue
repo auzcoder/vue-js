@@ -1,5 +1,8 @@
 <template>
   <div class="app font-monospace">
+    <button class="btn btn-success" @click="fetchMovie">
+      bosish
+    </button>
     <div class="content">
       <AppInfo
           :allMoviesCount="movies.length"
@@ -29,6 +32,7 @@ import SearchPanel from "@/compponent/search-panel/SearchPanel.vue";
 import AppFilter from "@/compponent/app-filter/AppFilter.vue";
 import MovieList from "@/compponent/movie-list/MovieList.vue";
 import MovieAddForm from "@/compponent/movie-add-form/MovieAddForm.vue";
+import axios from "axios";
 
 export default {
   components: {
@@ -122,8 +126,10 @@ export default {
       this.filter = filter
     },
 
-    async frtchMovie() {
-      parent
+    async fetchMovie() {
+      // const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
+      const response = await axios.get('https://student.tiu-edu.uz/rest/v1/public/university-list')
+      console.log(response)
     },
   },
 }
