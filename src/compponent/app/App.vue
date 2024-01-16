@@ -27,7 +27,9 @@
       />
       <nav aria-label="pagination">
         <ul class="pagination pagination-sm">
-          <li v-for="pageNumber in totalPages">11</li>
+          <li v-for="pageNumber in totalPages">
+            <span class="page-link">{{ pageNumber }}</span>
+          </li>
 <!--          <li class="page-item active" aria-current="page">-->
 <!--            <span class="page-link">1</span>-->
 <!--          </li>-->
