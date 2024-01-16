@@ -33,7 +33,7 @@
               v-for="pageNumber in totalPages"
               :class="{active: pageNumber === page}"
               :key="pageNumber"
-              @click="changePageHandler"
+              @click="changePageHandler(pageNumber)"
           >
             <span class="page-link">{{ pageNumber }}</span>
           </li>
@@ -157,10 +157,6 @@ export default {
       this.filter = filter
     },
 
-    changePageHandler(page) {
-      this.page = page
-    },
-
     async fetchMovie() {
       // const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
       try {
@@ -192,6 +188,12 @@ export default {
         this.isLoading = false
       }
     },
+
+    changePageHandler(page) {
+      this.page = page,
+      this.fetchMovie()
+    },
+
   },
   mounted() {
     this.fetchMovie()
