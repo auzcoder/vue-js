@@ -25,7 +25,8 @@
           @onToggle="onToggleHandler"
           @onRemove="onRemoveHandler"
       />
-      <nav aria-label="pagination">
+      <div class="d-flex justify-content-center"
+        <nav aria-label="pagination">
         <ul class="pagination pagination-sm">
           <li v-for="pageNumber in totalPages">
             <span class="page-link">{{ pageNumber }}</span>
@@ -37,6 +38,7 @@
 <!--          <li class="page-item"><a class="page-link" href="#">3</a></li>-->
         </ul>
       </nav>
+      </div>
       <MovieAddForm  @createMovie="createMovie" />
     </div>
 
