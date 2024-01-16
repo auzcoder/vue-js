@@ -25,10 +25,16 @@
           @onToggle="onToggleHandler"
           @onRemove="onRemoveHandler"
       />
-      <div class="d-flex justify-content-center"
+      <div class="d-flex justify-content-center">
         <nav aria-label="pagination">
         <ul class="pagination pagination-sm">
-          <li v-for="pageNumber in totalPages">
+          <li
+              class="page-item"
+              v-for="pageNumber in totalPages"
+              :class="{active: pageNumber === page}"
+              :key="pageNumber"
+              @click="changePageHandler"
+          >
             <span class="page-link">{{ pageNumber }}</span>
           </li>
 <!--          <li class="page-item active" aria-current="page">-->
@@ -149,6 +155,10 @@ export default {
 
     updateFilterHandler(filter) {
       this.filter = filter
+    },
+
+    changePageHandler(page) {
+      this.page = page
     },
 
     async fetchMovie() {
