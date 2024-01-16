@@ -190,7 +190,7 @@ export default {
     },
 
     changePageHandler(page) {
-      this.page = page,
+      this.page = page
       this.fetchMovie()
     },
 
