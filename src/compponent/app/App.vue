@@ -117,13 +117,14 @@ export default {
     }
   },
   methods: {
-    createMovie(item) {
-      this.movies.push(item)
+    async createMovie(item) {
+      const response = await axios.post('https://jsonplaceholder.typicode.com/posts', item)
+      console.log(response)
+      this.movies.push(response.data)
     },
     onToggleHandler({id, prop}) {
       this.movies = this.movies.map(item => {
         if (item.id === id) {
-          console.log(item)
           return {...item, [prop]: !item[prop]}
         }
         return item
@@ -177,7 +178,6 @@ export default {
           viewers: item.id * 150,
         }))
         this.totalPages = Math.ceil(response.headers['x-total-count'] / this.limit )
-        console.log(this.totalPages)
         this.movies = newArr
         // this.isLoading = false
         // }, 3000)
@@ -191,12 +191,16 @@ export default {
 
     changePageHandler(page) {
       this.page = page
-      this.fetchMovie()
     },
 
   },
   mounted() {
     this.fetchMovie()
+  },
+  watch: {
+    page() {
+      this.fetchMovie()
+    },
   }
 }
 
