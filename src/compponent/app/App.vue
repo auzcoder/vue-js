@@ -19,12 +19,21 @@
 <!--        <p class="text-center fs-3 text-danger">Kinolar yuklanmoqda...</p>-->
         <Loader />
       </div>
-        <MovieList
-            v-else
-            :movies="onFilterHandler(onSearchHandler(movies, term), filter)"
-            @onToggle="onToggleHandler"
-            @onRemove="onRemoveHandler"
-        />
+      <MovieList
+          v-else
+          :movies="onFilterHandler(onSearchHandler(movies, term), filter)"
+          @onToggle="onToggleHandler"
+          @onRemove="onRemoveHandler"
+      />
+      <nav aria-label="pagination">
+        <ul class="pagination pagination-sm">
+          <li class="page-item active" aria-current="page">
+            <span class="page-link">1</span>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+        </ul>
+      </nav>
       <MovieAddForm  @createMovie="createMovie" />
     </div>
 
@@ -91,6 +100,9 @@ export default {
       term: '',
       filter: 'all',
       isLoading: false,
+      limit: 10,
+      page: 1,
+      totalPages: 0,
     }
   },
   methods: {
@@ -139,15 +151,22 @@ export default {
       try {
         this.isLoading = true
         // setTimeout(async () =>{
-        const {data} = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
+        const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
+          params: {
+            _limit: this.limit,
+            _page: this.page
+          }
+        })
         // const response = await axios.get('https://student.namdu.uz/rest/v11/public/university-list')
-        const newArr = data.map(item => ({
+        const newArr = response.data.map(item => ({
           id: item.id,
           name: item.title,
           like: false,
           favourite: false,
           viewers: item.id * 150,
         }))
+        this.totalPages = Math.ceil(response.headers['x-total-count'] / this.limit )
+        console.log(this.totalPages)
         this.movies = newArr
         // this.isLoading = false
         // }, 3000)
