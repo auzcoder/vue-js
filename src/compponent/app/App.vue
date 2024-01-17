@@ -37,7 +37,6 @@
           >
             <span class="page-link">{{ pageNumber }}</span>
           </li>
-<!--            <span class="page-link">1</span>-->
         </ul>
       </nav>
       </div>
