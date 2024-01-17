@@ -37,7 +37,6 @@
           >
             <span class="page-link">{{ pageNumber }}</span>
           </li>
-<!--          <li class="page-item active" aria-current="page">-->
 <!--            <span class="page-link">1</span>-->
         </ul>
       </nav>
