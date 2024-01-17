@@ -71,8 +71,7 @@ export default {
   },
   data() {
     return {
-      movies: [
-      ],
+      movies: [],
       term: '',
       filter: 'all',
       isLoading: false,
