@@ -86,11 +86,7 @@ export default {
         //   favourite: true,
         //   like: true,
         // },
-        // {
-        //   id: 3,
-        //   name: 'Transformerlar - 2',
-        //   viewers: 1501,
-        //   favourite: false,
+   
       ],
       term: '',
       filter: 'all',
