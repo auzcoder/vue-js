@@ -80,13 +80,6 @@ export default {
         //   like: false,
         // },
         // {
-        //   id: 2,
-        //   name: 'Poyitaxt - Sulton Abdulhamidxon',
-        //   viewers: 600,
-        //   favourite: true,
-        //   like: true,
-        // },
-   
       ],
       term: '',
       filter: 'all',
