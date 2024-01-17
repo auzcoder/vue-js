@@ -39,7 +39,6 @@
           </li>
 <!--          <li class="page-item active" aria-current="page">-->
 <!--            <span class="page-link">1</span>-->
-<!--          </li>-->
         </ul>
       </nav>
       </div>
