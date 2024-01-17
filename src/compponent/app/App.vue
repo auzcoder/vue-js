@@ -91,22 +91,6 @@ export default {
         //   name: 'Transformerlar - 2',
         //   viewers: 1501,
         //   favourite: false,
-        //   like: false,
-        // },
-        // {
-        //   id: 4,
-        //   name: 'Uyda yog\'iz - 4',
-        //   viewers: 420,
-        //   favourite: false,
-        //   like: false
-        // },
-        // {
-        //   id: 5,
-        //   name: 'Ichkarida - Turk seriali',
-        //   viewers: 420,
-        //   favourite: true,
-        //   like: true
-        // },
       ],
       term: '',
       filter: 'all',
