@@ -72,14 +72,6 @@ export default {
   data() {
     return {
       movies: [
-        // {
-        //   id: 1,
-        //   name: 'Sayrga chiqgan go\'dak',
-        //   viewers: 940,
-        //   favourite: false,
-        //   like: false,
-        // },
-        // {
       ],
       term: '',
       filter: 'all',
